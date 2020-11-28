@@ -574,4 +574,19 @@ See [CHANGELOG](https://github.com/bloggerpack/bloggerpack/blob/master/CHANGELOG
 Licensed under [MIT](https://github.com/bloggerpack/bloggerpack/blob/master/LICENSE).
 
 https://zellwk.com/blog/publish-to-npm/
+
+### Publish package to NPM package registry
+```shell script
+npm login
 npm publish --access public
+```
+
+### Unpublishing a single version of a package
+```shell script
+npm unpublish <package-name>@<version>
+```
+
+### Unpublishing an entire package
+```shell script
+npm unpublish <package-name> -f
+```
