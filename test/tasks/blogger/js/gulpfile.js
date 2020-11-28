@@ -1,9 +1,9 @@
 const {series, registry} = require('gulp');
 
-const jsRegistry = require('../../../tasks/blogger/js');
+const jsRegistry = require('../../../../tasks/blogger/js');
 registry(new jsRegistry());
 
-const cleanRegistry = require('../../../tasks/blogger/clean');
+const cleanRegistry = require('../../../../tasks/blogger/clean');
 registry(new cleanRegistry());
 
 // gulp build --gulpfile test/tasks/js/gulpfile.js

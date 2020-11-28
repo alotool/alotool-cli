@@ -362,7 +362,7 @@ Output:
 
 ### More Template example
 
-[See more example](test/tasks/template).
+[See more example](test/tasks/blogger/template).
 
 ## Sass
 
@@ -398,7 +398,7 @@ The styles within the tag would be automatically extracted to `src/sass/_sass-in
 
 ### More Sass example
 
-[See more example](test/tasks/sass).
+[See more example](test/tasks/blogger/sass).
 
 ## Skin
 
@@ -440,7 +440,7 @@ The styles within the tag would be automatically extracted to `src/skin/skin-in-
 
 ### More Skin example
 
-[See more example](test/tasks/skin).
+[See more example](test/tasks/blogger/skin).
 
 ## JS
 
@@ -472,7 +472,7 @@ The JavaScript within the tag would be automatically extracted to `src/js/js-in-
 
 ### More JS example
 
-[See more example](test/tasks/js).
+[See more example](test/tasks/blogger/js).
 
 ---
 
