@@ -24,7 +24,7 @@
     "alotool": "bin.js"
   },
   "scripts": {
-    "test": "npm-run-all --serial test-lib test-tasks && mocha",
+    "test": "npm-run-all --serial test-lib test-tasks && mocha --recursive test/**/*.spec.js",
     "test-lib": "npm-run-all --serial test-lib-*",
     "test-lib-extract": "gulp build --gulpfile test/lib/extract/gulpfile.js",
     "test-lib-skin-ib": "gulp build --gulpfile test/lib/skin-import-beautifier/gulpfile.js",
