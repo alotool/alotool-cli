@@ -100,7 +100,7 @@ registry(new cleanRegistry());
  */
 
 if (tasks.length === 0 || tasks.includes(templateTasks) === false) {
-  const errorTasks = function (cb) {
+  const errorTasks = function(cb) {
     cb(new Error('Require ' + path.join(config.template.src.dir, config.template.src.filename)));
   };
   errorTasks.displayName = 'error';

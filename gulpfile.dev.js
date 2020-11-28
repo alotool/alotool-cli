@@ -12,20 +12,26 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
  */
 
 const change = {
-  startersBloggerpackVersion: function () {
+  startersBloggerpackVersion: function() {
     return src('starters/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('starters', {overwrite: true}))
+      .pipe(dest('starters', {
+        overwrite: true
+      }))
   },
-  startersDownloadVersion: function () {
+  startersDownloadVersion: function() {
     return src('starters/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('starters', {overwrite: true}))
+      .pipe(dest('starters', {
+        overwrite: true
+      }))
   },
-  packageCurrentVersion: function () {
+  packageCurrentVersion: function() {
     return src('package.json')
       .pipe(replace('"version_current": "' + pkg.version_current + '"', '"version_current": "' + pkg.version + '"'))
-      .pipe(dest('.', {overwrite: true}))
+      .pipe(dest('.', {
+        overwrite: true
+      }))
   }
 };
 
@@ -54,8 +60,8 @@ const starters = {
 
 const zipStarters = Object.keys(starters);
 
-zipStarters.forEach(function (taskName) {
-  task(taskName, function () {
+zipStarters.forEach(function(taskName) {
+  task(taskName, function() {
     starters[taskName].files.push('!starters/**/node_modules/**');
     starters[taskName].files.push('!starters/**/package-lock.json');
 
@@ -72,7 +78,7 @@ function cleanStartersZip(cb) {
 
 exports.zip_starters = series(
   cleanStartersZip,
-  zipStarters.map(function (name) {
+  zipStarters.map(function(name) {
     return name;
   })
 );
