@@ -1,6 +1,6 @@
 {
   "name": "@alotool/alotool-cli",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "version_current": "1.0.0-beta.1",
   "description": "Command Line Interface for alotool.",
   "keywords": [
