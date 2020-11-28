@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "alotool build",
+    "watch": "alotool watch"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.0",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@alotool/alotool-cli": "^1.0.0-beta.2"
+  }
+}
