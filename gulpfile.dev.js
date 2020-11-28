@@ -72,5 +72,7 @@ function cleanStartersZip(cb) {
 
 exports.zip_starters = series(
   cleanStartersZip,
-  zipStarters.map(function (name) {return name;})
+  zipStarters.map(function (name) {
+    return name;
+  })
 );
