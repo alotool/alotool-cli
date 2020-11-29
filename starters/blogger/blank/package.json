@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "alotool build",
+    "watch": "alotool watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@alotool/alotool-cli": "^0.0.1-beta.1"
+  }
+}

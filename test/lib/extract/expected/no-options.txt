@@ -1,0 +1,7 @@
+/* src/default.njk */
+
+default
+
+/* src/empty1.njk */
+
+/* Empty */
