@@ -16,7 +16,7 @@ insert_final_newline = false
 indent_style = space
 indent_size = 4
 
-[*.{ts, tsx, js, jsx, json, css, scss, yml, yaml, html, xml}]
+[*.{ts, tsx, js, jsx, json, css, scss, yml, yaml, html, xml, njk}]
 indent_size = 2
 
 [*.md]
