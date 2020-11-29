@@ -3,22 +3,25 @@ const gulp = require('gulp');
 const fetch = require('node-fetch');
 
 gulp.task('default', function (done) {
-  let themeXML = fs.readFileSync('test/tasks/blogger/template/theme.xml', 'utf8');
+  var themeXML = fs.readFileSync('test/tasks/blogger/template/theme.xml', 'utf8');
+  themeXML = themeXML.replace(/"/g, "\\\\\\\"");
   //console.log(themeXML);
-  let xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><!DOCTYPE html><html><head><title><data:blog.pageTitle/></title><b:skin></b:skin></head><body><b:section id=\"header\"/><h1 class=\"welcome\">Welcome Blogger!</h1></body></html>";
-  let themeEncode = encodeURIComponent(xml);
-  console.log(themeEncode);
-  var s = "f.req=%5B%5B%5B%22ZmRkFc%22%2C%22%5B%5C%225210147448283309506%5C%22%2C%5B%5C%225210147448283309506%5C%22%2C%5C%22";
-  var e = "%5C%22%2C1%2C%5B%5D%5D%2Ctrue%2Cfalse%2Ctrue%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&at=AG0M1HOorzaNE51LqTAPViZTjxuG%3A1606665981987&";
-  //console.log(themeEncode)
+  // ENCODE
+  let themeXMLEncode = encodeURIComponent(themeXML);
+  //console.log(themeXMLEncode);
+  var start = "f.req=%5B%5B%5B%22ZmRkFc%22%2C%22%5B%5C%225210147448283309506%5C%22%2C%5B%5C%225210147448283309506%5C%22%2C%5C%22";
+  var end = "%5C%22%2C1%2C%5B%5D%5D%2Ctrue%2Cfalse%2Ctrue%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&at=AG0M1HOorzaNE51LqTAPViZTjxuG%3A1606665981987&";
+  themeXMLEncode = start + themeXMLEncode + end;
+  //console.log(themeXMLEncode)
 
-  let themeDecode = decodeURIComponent(themeEncode);
-  console.log(themeDecode);
+  // DECODE
+  let themeXMLDecode = decodeURIComponent(themeXMLEncode);
+  console.log(themeXMLDecode);
 
 
-  fetch("https://www.blogger.com/_/BloggerUi/data/batchexecute?rpcids=ZmRkFc&f.sid=-8283365557771444448&bl=boq_bloggeruiserver_20201126.00_p0&hl=vi&soc-app=174&soc-platform=1&soc-device=1&_reqid=483184&rt=c", {
+/*  fetch("https://www.blogger.com/_/BloggerUi/data/batchexecute?rpcids=ZmRkFc&f.sid=-8283365557771444448&bl=boq_bloggeruiserver_20201126.00_p0&hl=vi&soc-app=174&soc-platform=1&soc-device=1&_reqid=483184&rt=c", {
     "headers": {
-      "accept": "*/*",
+      "accept": "*!/!*",
       "accept-language": "en,en-US;q=0.9,vi;q=0.8",
       "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
       "sec-ch-ua": "\"Chromium\";v=\"86\", \"\\\"Not\\\\A;Brand\";v=\"99\", \"Google Chrome\";v=\"86\"",
@@ -38,6 +41,6 @@ gulp.task('default', function (done) {
     console.log(res);
   }).catch(err => {
     console.error(err)
-  });
+  });*/
   done();
 });
