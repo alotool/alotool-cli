@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      <data:blog.pageTitle/>
+    </title>
+    <b:skin></b:skin>
+  </head>
+  <body>
+    <b:section id='header'/>
+    <h1>Welcom Blogger!</h1>
+  </body>
+</html>

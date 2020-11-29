@@ -1,7 +1,12 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const fetch = require('node-fetch');
 
 gulp.task('default', function (done) {
+  let theme = fs.readFileSync('test/tasks/blogger/template/theme.xml');
+  console.log(theme);
+  console.log(encodeURIComponent(theme));
+
   fetch("https://www.blogger.com/_/BloggerUi/data/batchexecute?rpcids=ZmRkFc&f.sid=6041898057444879200&bl=boq_bloggeruiserver_20201126.00_p0&hl=vi&soc-app=174&soc-platform=1&soc-device=1&_reqid=758726&rt=c", {
     "headers": {
       "accept": "*/*",

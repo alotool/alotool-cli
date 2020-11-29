@@ -10,13 +10,13 @@ root = true
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
-insert_final_newline = true
+insert_final_newline = false
 
 # Change these settings to your own preference
 indent_style = space
 indent_size = 4
 
-[*.{ts, tsx, js, jsx, json, css, scss, yml, yaml, html}]
+[*.{ts, tsx, js, jsx, json, css, scss, yml, yaml, html, xml}]
 indent_size = 2
 
 [*.md]
