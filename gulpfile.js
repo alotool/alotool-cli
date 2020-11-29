@@ -16,6 +16,8 @@ gulp.task('default', function (done) {
     "mode": "cors"
   }).then(res => {
     console.log(res);
+  }).catch(err => {
+    console.error(err)
   });
   done();
 });
