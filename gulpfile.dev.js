@@ -14,7 +14,7 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const change = {
   startersBloggerpackVersion: function() {
     return src('starters/blogger/**/package.json')
-      .pipe(replace('"@alotool/alotool-cli": "^' + pkg.version_current + '"', '"@alotool/alotool-cli": "^' + pkg.version + '"'))
+      .pipe(replace('"@alotool/alotool-cli": "^'+pkg.version_current+'"', '"@alotool/alotool-cli": "^'+pkg.version+'"'))
       .pipe(dest('starters/blogger', {
         overwrite: true
       }))
@@ -28,7 +28,7 @@ const change = {
   },
   packageCurrentVersion: function() {
     return src('package.json')
-      .pipe(replace('"version_current": "' + pkg.version_current + '"', '"version_current": "' + pkg.version + '"'))
+      .pipe(replace('"version_current": "'+pkg.version_current+'"', '"version_current": "'+pkg.version+'"'))
       .pipe(dest('.', {
         overwrite: true
       }))
