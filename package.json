@@ -89,7 +89,8 @@
     "undertaker-registry": "^1.0.1",
     "util": "^0.12.3",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "node-fetch": "latest"
   },
   "devDependencies": {
     "gulp-zip": "^5.0.2",
