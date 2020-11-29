@@ -15,13 +15,13 @@ gulp.task('default', function (done) {
   //console.log(themeXMLEncode)
 
   // DECODE
-  let themeXMLDecode = decodeURIComponent(themeXMLEncode);
-  console.log(themeXMLDecode);
+  //let themeXMLDecode = decodeURIComponent(themeXMLEncode);
+  //console.log(themeXMLDecode);
 
 
-/*  fetch("https://www.blogger.com/_/BloggerUi/data/batchexecute?rpcids=ZmRkFc&f.sid=-8283365557771444448&bl=boq_bloggeruiserver_20201126.00_p0&hl=vi&soc-app=174&soc-platform=1&soc-device=1&_reqid=483184&rt=c", {
+  fetch("https://www.blogger.com/_/BloggerUi/data/batchexecute?rpcids=ZmRkFc&f.sid=-8283365557771444448&bl=boq_bloggeruiserver_20201126.00_p0&hl=vi&soc-app=174&soc-platform=1&soc-device=1&_reqid=483184&rt=c", {
     "headers": {
-      "accept": "*!/!*",
+      "accept": "*/*",
       "accept-language": "en,en-US;q=0.9,vi;q=0.8",
       "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
       "sec-ch-ua": "\"Chromium\";v=\"86\", \"\\\"Not\\\\A;Brand\";v=\"99\", \"Google Chrome\";v=\"86\"",
@@ -34,13 +34,14 @@ gulp.task('default', function (done) {
     },
     "referrer": "https://www.blogger.com/",
     "referrerPolicy": "origin",
-    "body": "f.req=%5B%5B%5B%22ZmRkFc%22%2C%22%5B%5C%225210147448283309506%5C%22%2C%5B%5C%225210147448283309506%5C%22%2C%5C%22%3C%3Fxml%20version%3D%5C%5C%5C%221.0%5C%5C%5C%22%20encoding%3D%5C%5C%5C%22UTF-8%5C%5C%5C%22%20%3F%3E%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3E%3Cdata%3Ablog.pageTitle%2F%3E%3C%2Ftitle%3E%3Cb%3Askin%3E%3C%2Fb%3Askin%3E%3C%2Fhead%3E%3Cbody%3E%3Cb%3Asection%20id%3D%5C%5C%5C%22header%5C%5C%5C%22%2F%3E%3Ch1%20class%3D%5C%5C%5C%22welcome%5C%5C%5C%22%3EWelcome%20Blogger!%3C%2Fh1%3E%3C%2Fbody%3E%3C%2Fhtml%3E%5C%22%2C1%2C%5B%5D%5D%2Ctrue%2Cfalse%2Ctrue%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&at=AG0M1HOorzaNE51LqTAPViZTjxuG%3A1606665981987&",
+    //"body": "f.req=%5B%5B%5B%22ZmRkFc%22%2C%22%5B%5C%225210147448283309506%5C%22%2C%5B%5C%225210147448283309506%5C%22%2C%5C%22%3C%3Fxml%20version%3D%5C%5C%5C%221.0%5C%5C%5C%22%20encoding%3D%5C%5C%5C%22UTF-8%5C%5C%5C%22%20%3F%3E%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3E%3Cdata%3Ablog.pageTitle%2F%3E%3C%2Ftitle%3E%3Cb%3Askin%3E%3C%2Fb%3Askin%3E%3C%2Fhead%3E%3Cbody%3E%3Cb%3Asection%20id%3D%5C%5C%5C%22header%5C%5C%5C%22%2F%3E%3Ch1%20class%3D%5C%5C%5C%22welcome%5C%5C%5C%22%3EWelcome%20Blogger!%3C%2Fh1%3E%3C%2Fbody%3E%3C%2Fhtml%3E%5C%22%2C1%2C%5B%5D%5D%2Ctrue%2Cfalse%2Ctrue%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&at=AG0M1HOorzaNE51LqTAPViZTjxuG%3A1606665981987&",
+    "body": themeXMLEncode,
     "method": "POST",
     "mode": "cors"
   }).then(res => {
     console.log(res);
   }).catch(err => {
     console.error(err)
-  });*/
+  });
   done();
 });
