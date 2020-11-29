@@ -14,15 +14,15 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const change = {
   startersBloggerpackVersion: function() {
     return src('starters/blogger/**/package.json')
-      .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('starters', {
+      .pipe(replace('"@alotool/alotool-cli": "^' + pkg.version_current + '"', '"@alotool/alotool-cli": "^' + pkg.version + '"'))
+      .pipe(dest('starters/blogger', {
         overwrite: true
       }))
   },
   startersDownloadVersion: function() {
     return src('starters/blogger/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('starters', {
+      .pipe(dest('starters/blogger', {
         overwrite: true
       }))
   },
