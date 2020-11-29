@@ -13,22 +13,34 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
 const change = {
   startersBloggerpackVersion: function() {
+    var oldValue = '"@alotool/alotool-cli": "^'+pkg.version_current+'"';
+    var newValue = '"@alotool/alotool-cli": "^'+pkg.version+'"';
+    console.log(oldValue);
+    console.log(newValue);
     return src('starters/blogger/**/package.json')
-      .pipe(replace('"@alotool/alotool-cli": "^'+pkg.version_current+'"', '"@alotool/alotool-cli": "^'+pkg.version+'"'))
+      .pipe(replace(oldValue, newValue))
       .pipe(dest('starters/blogger', {
         overwrite: true
       }))
   },
   startersDownloadVersion: function() {
+    var oldValue = pkg.version_current;
+    var newValue = pkg.version;
+    console.log(oldValue);
+    console.log(newValue);
     return src('starters/blogger/**/README.md')
-      .pipe(replace(pkg.version_current, pkg.version))
+      .pipe(replace(oldValue, newValue))
       .pipe(dest('starters/blogger', {
         overwrite: true
       }))
   },
   packageCurrentVersion: function() {
+    var oldValue = '"version_current": "'+pkg.version_current+'"';
+    var newValue = '"version_current": "'+pkg.version+'"';
+    console.log(oldValue);
+    console.log(newValue);
     return src('package.json')
-      .pipe(replace('"version_current": "'+pkg.version_current+'"', '"version_current": "'+pkg.version+'"'))
+      .pipe(replace(oldValue, newValue))
       .pipe(dest('.', {
         overwrite: true
       }))
