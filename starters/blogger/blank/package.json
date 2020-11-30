@@ -6,6 +6,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@alotool/alotool-cli": "^0.0.1-beta.1"
+    "@alotool/alotool-cli": "^0.0.1-beta.2"
   }
 }
