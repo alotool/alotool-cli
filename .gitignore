@@ -14,11 +14,6 @@ node_modules/
 npm-debug.log.*
 /.awcache/*
 /.cache-loader/*
-# Folders and files to ignore
-/node_modules
-/starters/**/node_modules
-/starters/**/package-lock.json
-/starters-zip
 
 ######################
 # SASS
@@ -151,3 +146,4 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
