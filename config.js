@@ -47,6 +47,16 @@ module.exports = {
       end: '</style>'
     }
   },
+  layout: {
+    src: {
+      dir: './src/layout',
+      filename: 'layout.css'
+    },
+    build: {
+      dir: './src/dist',
+      filename: 'layout.css'
+    }
+  },
   js: {
     src: {
       dir: './src/js',
