@@ -48,6 +48,23 @@ if (fs.existsSync(path.join(config.skin.src.dir, config.skin.src.filename))) {
 
 /**
  * ------------------------------------------------------------------------
+ * layout tasks
+ * ------------------------------------------------------------------------
+ */
+
+const layoutRegistry = require('./tasks/blogger/layout');
+registry(new layoutRegistry());
+
+const layoutTasks = series(
+  'layout-compile'
+);
+
+if (fs.existsSync(path.join(config.layout.src.dir, config.layout.src.filename))) {
+  tasks.push(layoutTasks);
+}
+
+/**
+ * ------------------------------------------------------------------------
  * JS tasks
  * ------------------------------------------------------------------------
  */
