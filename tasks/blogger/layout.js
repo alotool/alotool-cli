@@ -7,6 +7,9 @@ const stripIndent = require('strip-indent');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const header = require('gulp-header');
+const strip = require('gulp-strip-comments');
+const prettyData = require('gulp-pretty-data');
+
 const trim = require('../../lib/trim');
 const config = require('../../config');
 
@@ -55,13 +58,14 @@ layoutRegistry.prototype.init = function(gulpInst) {
 
   gulpInst.task('layout-build', function() {
     return src(opts.src.dir + '/*.css')
+      .pipe(strip())
+      .pipe(prettyData({type: 'minify'}))
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(dest(opts.build.dir, {
         overwrite: true
       }));
   });
-
   gulpInst.task('layout-tasks', series(
     'layout-build'
   ));
