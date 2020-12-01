@@ -91,12 +91,11 @@ if (fs.existsSync(path.join(config.js.src.dir, config.js.src.filename))) {
 
 const templateRegistry = require('./tasks/blogger/template');
 registry(new templateRegistry());
-var templateTasks = series();
+const templateTasks = series(
+  'template-compile-main',
+  'template-compile-variant'
+);
 if (fs.existsSync(path.join(config.template.src.dir, config.template.src.filename))) {
-  templateTasks = series(
-    'template-compile-main',
-    'template-compile-variant'
-  );
   tasks.push(templateTasks);
 } else {
   // Nothing
