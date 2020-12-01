@@ -160,6 +160,7 @@ jsRegistry.prototype.init = function (gulpInst) {
   gulpInst.task('js-build', function() {
     return src(opts.src.dir + '/*.js')
       .pipe(strip())
+      .pipe(terser())
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(dest(opts.build.dir, {
