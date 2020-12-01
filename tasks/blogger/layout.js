@@ -54,9 +54,8 @@ layoutRegistry.prototype.init = function(gulpInst) {
   };
 
   gulpInst.task('layout-build', function() {
-    return src(skinOpts.compile.src)
+    return src(skinOpts.compile.src + '*.css')
       .pipe(header(banner.text, banner.data))
-      .pipe(rename(skinOpts.compile.filename))
       .pipe(trim())
       .pipe(dest(skinOpts.compile.dest, {
         overwrite: true
