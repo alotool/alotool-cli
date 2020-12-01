@@ -4,6 +4,7 @@ const {src, dest, series} = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const rename = require('gulp-rename');
+//const prettyData = require('gulp-pretty-data');
 
 // compile
 const templateCompile = require('../../lib/template-compiler');
@@ -64,6 +65,7 @@ templateRegistry.prototype.init = function (gulpInst) {
         p.extname = '.xml';
       }))
       .pipe(trim())
+      //.pipe(prettyData({type: 'prettify'}))
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
