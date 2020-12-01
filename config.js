@@ -50,7 +50,7 @@ module.exports = {
   layout: {
     src: {
       dir: './src/layout',
-      filename: 'layout.css'
+      filename: 'index.css'
     },
     build: {
       dir: './src/dist',
