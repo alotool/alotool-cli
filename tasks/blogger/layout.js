@@ -54,10 +54,10 @@ layoutRegistry.prototype.init = function(gulpInst) {
   };
 
   gulpInst.task('layout-build', function() {
-    return src(skinOpts.compile.src + '/*.css')
+    return src(opts.src.dir + '/*.css')
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
-      .pipe(dest(skinOpts.compile.dest, {
+      .pipe(dest(opts.build.dir, {
         overwrite: true
       }));
   });
