@@ -80,7 +80,10 @@ if (fs.existsSync(path.join(config.js.src.dir, config.js.src.filename))) {
   );
   tasks.push(jsTasks);
 } else {
-
+  const jsTasks = series(
+    'js-build'
+  );
+  tasks.push(jsTasks);
 }
 
 /**

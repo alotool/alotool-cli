@@ -7,6 +7,7 @@ const log = require('gulplog');
 const stripIndent = require('strip-indent');
 const del = require('del');
 const concat = require('gulp-concat');
+const strip = require('gulp-strip-comments');
 
 // extract
 const extract = require('../../lib/extract');
@@ -154,6 +155,16 @@ jsRegistry.prototype.init = function (gulpInst) {
       }))
       .pipe(trim())
       .pipe(dest(jsOpts.compile.dest, {overwrite: true}));
+  });
+
+  gulpInst.task('js-build', function() {
+    return src(opts.src.dir + '/*.js')
+      .pipe(strip())
+      .pipe(header(banner.text, banner.data))
+      .pipe(trim())
+      .pipe(dest(opts.build.dir, {
+        overwrite: true
+      }));
   });
 
   gulpInst.task('js-tasks', series(
