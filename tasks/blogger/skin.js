@@ -8,7 +8,7 @@ const del = require('del');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
-const strip = require('gulp-strip-comments');
+const stripCssComments = require('gulp-strip-css-comments');
 const prettyData = require('gulp-pretty-data');
 
 // extract
@@ -153,8 +153,8 @@ skinRegistry.prototype.init = function (gulpInst) {
 
   gulpInst.task('skin-build', function() {
     return src(opts.src.dir + '/*.css')
-      .pipe(strip())
-      .pipe(prettyData({type: 'minify'}))
+      .pipe(stripCssComments())
+      .pipe(prettyData({type: 'minify', preserveComments: true}))
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(dest(opts.build.dir, {

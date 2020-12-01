@@ -69,6 +69,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-comments": "^2.5.2",
+    "gulp-strip-css-comments": "^2.0.0",
     "gulp-stylelint": "^13.0.0",
     "gulp-terser": "^1.4.0",
     "gulplog": "^1.0.0",
