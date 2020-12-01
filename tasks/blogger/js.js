@@ -144,6 +144,7 @@ jsRegistry.prototype.init = function (gulpInst) {
       .on('error', log.error)
       .pipe(header(banner.text, banner.data))
       .pipe(terser({
+        module: true,
         mangle: true,
         compress: {
           typeofs: false
