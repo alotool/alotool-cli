@@ -86,7 +86,7 @@ jsRegistry.prototype.init = function (gulpInst) {
   const banner = {
     text: stripIndent(
       fs.readFileSync(jsOpts.compile.banner.text, 'utf8').trim()
-    ) + '\n\n',
+    ) + '\n',
     data: {
       data: require(jsOpts.compile.banner.data),
       pkg: require(path.join(process.cwd(), 'package.json'))

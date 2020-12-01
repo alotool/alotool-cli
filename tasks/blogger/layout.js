@@ -46,7 +46,7 @@ layoutRegistry.prototype.init = function(gulpInst) {
   const banner = {
     text: stripIndent(
       fs.readFileSync(skinOpts.compile.banner.text, 'utf8').trim()
-    ) + '\n\n',
+    ) + '\n',
     data: {
       data: require(skinOpts.compile.banner.data),
       pkg: require(path.join(process.cwd(), 'package.json'))
