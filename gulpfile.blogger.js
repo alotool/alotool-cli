@@ -14,16 +14,16 @@ const tasks = [];
 
 const sassRegistry = require('./tasks/blogger/sass');
 registry(new sassRegistry());
-
-const sassTasks = series(
-  'sass-extract-clean',
-  'sass-extract',
-  'sass-lint',
-  'sass-compile'
-);
-
 if (fs.existsSync(path.join(config.sass.src.dir, config.sass.src.filename))) {
+  const sassTasks = series(
+    'sass-extract-clean',
+    'sass-extract',
+    'sass-lint',
+    'sass-compile'
+  );
   tasks.push(sassTasks);
+} else {
+
 }
 
 /**
@@ -34,16 +34,16 @@ if (fs.existsSync(path.join(config.sass.src.dir, config.sass.src.filename))) {
 
 const skinRegistry = require('./tasks/blogger/skin');
 registry(new skinRegistry());
-
-const skinTasks = series(
-  'skin-extract-clean',
-  'skin-extract',
-  'skin-lint',
-  'skin-compile'
-);
-
 if (fs.existsSync(path.join(config.skin.src.dir, config.skin.src.filename))) {
+  const skinTasks = series(
+    'skin-extract-clean',
+    'skin-extract',
+    'skin-lint',
+    'skin-compile'
+  );
   tasks.push(skinTasks);
+} else {
+
 }
 
 /**
@@ -54,12 +54,12 @@ if (fs.existsSync(path.join(config.skin.src.dir, config.skin.src.filename))) {
 
 const layoutRegistry = require('./tasks/blogger/layout');
 registry(new layoutRegistry());
-
-const layoutTasks = series(
-  'layout-compile'
-);
-
 if (fs.existsSync(path.join(config.layout.src.dir, config.layout.src.filename))) {
+  // Nothing
+} else {
+  const layoutTasks = series(
+    'layout-build'
+  );
   tasks.push(layoutTasks);
 }
 
@@ -71,16 +71,16 @@ if (fs.existsSync(path.join(config.layout.src.dir, config.layout.src.filename)))
 
 const jsRegistry = require('./tasks/blogger/js');
 registry(new jsRegistry());
-
-const jsTasks = series(
-  'js-extract-clean',
-  'js-extract',
-  'js-lint',
-  'js-compile'
-);
-
 if (fs.existsSync(path.join(config.js.src.dir, config.js.src.filename))) {
+  const jsTasks = series(
+    'js-extract-clean',
+    'js-extract',
+    'js-lint',
+    'js-compile'
+  );
   tasks.push(jsTasks);
+} else {
+
 }
 
 /**
@@ -91,14 +91,15 @@ if (fs.existsSync(path.join(config.js.src.dir, config.js.src.filename))) {
 
 const templateRegistry = require('./tasks/blogger/template');
 registry(new templateRegistry());
-
-const templateTasks = series(
-  'template-compile-main',
-  'template-compile-variant'
-);
-
 if (fs.existsSync(path.join(config.template.src.dir, config.template.src.filename))) {
+  const templateTasks = series(
+    'template-compile-main',
+    'template-compile-variant'
+  );
+
   tasks.push(templateTasks);
+} else {
+  // Nothing
 }
 
 /**

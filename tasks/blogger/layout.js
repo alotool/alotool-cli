@@ -53,7 +53,7 @@ layoutRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('layout-compile', function() {
+  gulpInst.task('layout-build', function() {
     return src(skinOpts.compile.src)
       .pipe(header(banner.text, banner.data))
       .pipe(rename(skinOpts.compile.filename))
@@ -64,7 +64,7 @@ layoutRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('layout-tasks', series(
-    'layout-compile'
+    'layout-build'
   ));
 
 };
