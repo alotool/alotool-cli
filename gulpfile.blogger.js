@@ -43,7 +43,10 @@ if (fs.existsSync(path.join(config.skin.src.dir, config.skin.src.filename))) {
   );
   tasks.push(skinTasks);
 } else {
-
+  const skinTasks = series(
+    'skin-build'
+  );
+  tasks.push(skinTasks);
 }
 
 /**

@@ -8,6 +8,7 @@ const del = require('del');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
+const strip = require('gulp-strip-comments');
 
 // extract
 const extract = require('../../lib/extract');
@@ -147,6 +148,16 @@ skinRegistry.prototype.init = function (gulpInst) {
       .pipe(rename(skinOpts.compile.filename))
       .pipe(trim())
       .pipe(dest(skinOpts.compile.dest, {overwrite: true}));
+  });
+
+  gulpInst.task('skin-build', function() {
+    return src(opts.src.dir + '/*.css')
+      .pipe(strip())
+      .pipe(header(banner.text, banner.data))
+      .pipe(trim())
+      .pipe(dest(opts.build.dir, {
+        overwrite: true
+      }));
   });
 
   gulpInst.task('skin-tasks', series(
