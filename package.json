@@ -1,7 +1,7 @@
 {
   "name": "@alotool/alotool-cli",
-  "version": "0.0.1-beta.5",
-  "version_current": "0.0.1-beta.5",
+  "version": "0.0.1-beta.6",
+  "version_current": "0.0.1-beta.6",
   "description": "Command Line Interface for alotool.",
   "keywords": [
     "blogger",
