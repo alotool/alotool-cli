@@ -60,6 +60,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^4.0.0",
     "gulp-eslint": "^6.0.0",
+    "gulp-filter": "^6.0.0",
     "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
     "gulp-postcss": "^9.0.0",

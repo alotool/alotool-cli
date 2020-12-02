@@ -8,6 +8,7 @@ const stripIndent = require('strip-indent');
 const del = require('del');
 const concat = require('gulp-concat');
 const strip = require('gulp-strip-comments');
+const filter = require('gulp-filter');
 
 // extract
 const extract = require('../../lib/extract');
@@ -44,7 +45,7 @@ function jsRegistry(opts) {
 
 util.inherits(jsRegistry, defaultRegistry);
 
-jsRegistry.prototype.init = function (gulpInst) {
+jsRegistry.prototype.init = function(gulpInst) {
   const opts = this.opts;
 
   const jsOpts = {
@@ -95,24 +96,31 @@ jsRegistry.prototype.init = function (gulpInst) {
     }
   };
 
-  gulpInst.task('js-extract-clean', function (cb) {
+  gulpInst.task('js-extract-clean', function(cb) {
     del.sync(path.join(process.cwd(), jsOpts.extract.dest, jsOpts.extract.filename));
     cb();
   });
-  gulpInst.task('js-extract', function () {
-    return src([...jsOpts.extract.src], {allowEmpty: true})
+  gulpInst.task('js-extract', function() {
+    return src([...jsOpts.extract.src], {
+      allowEmpty: true
+    })
       .pipe(extract(jsOpts.extract.opts))
       .pipe(concat(jsOpts.extract.filename))
-      .pipe(dest(jsOpts.extract.dest, {overwrite: true}));
+      .pipe(dest(jsOpts.extract.dest, {
+        overwrite: true
+      }));
   });
 
-  gulpInst.task('js-lint', function (cb) {
+  gulpInst.task('js-lint', function(cb) {
     if (fs.existsSync(path.join(process.cwd(), config.configFile.eslint))) {
-      return src([...jsOpts.lint.src], {allowEmpty: true})
+      return src([...jsOpts.lint.src], {
+        allowEmpty: true
+      })
         .pipe(eslint({
           configFile: jsOpts.lint.configFile,
           envs: ['browser',
-            'jquery'],
+            'jquery'
+          ],
           parser: '@babel/eslint-parser',
           parserOptions: {
             requireConfigFile: false
@@ -127,7 +135,7 @@ jsRegistry.prototype.init = function (gulpInst) {
     }
   });
 
-  gulpInst.task('js-compile', function () {
+  gulpInst.task('js-compile', function() {
     var b = browserify({
       entries: jsOpts.compile.src,
       debug: true,
@@ -136,7 +144,8 @@ jsRegistry.prototype.init = function (gulpInst) {
           {
             'presets': ['@babel/preset-env'],
             'plugins': ['babel-plugin-root-import']
-          }]
+          }
+        ]
       ]
     });
 
@@ -155,13 +164,20 @@ jsRegistry.prototype.init = function (gulpInst) {
         }
       }))
       .pipe(trim())
-      .pipe(dest(jsOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(jsOpts.compile.dest, {
+        overwrite: true
+      }));
   });
 
   gulpInst.task('js-build', function() {
+    const jsFilter = filter('**/*.minify.js', {
+      restore: true
+    });
     return src(opts.src.dir + '/*.js')
       .pipe(strip())
+      .pipe(jsFilter)
       .pipe(terser())
+      .pipe(jsFilter.restore)
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(removeEmptyLines())
