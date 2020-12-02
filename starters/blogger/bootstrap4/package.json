@@ -11,6 +11,6 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "@alotool/alotool-cli": "^0.0.1-beta.5"
+    "@alotool/alotool-cli": "^0.0.1-beta.6"
   }
 }
