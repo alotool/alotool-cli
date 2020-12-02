@@ -9,6 +9,7 @@ const rename = require('gulp-rename');
 // compile
 const templateCompile = require('../../lib/template-compiler');
 const trim = require('../../lib/trim');
+const removeEmptyLines = require('../../lib/remove-empty-lines');
 
 const config = require('../../config');
 
@@ -54,6 +55,8 @@ templateRegistry.prototype.init = function (gulpInst) {
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(templateOpts.compile.filename))
       .pipe(trim())
+      //.pipe(prettyData({type: 'prettify'}))
+      .pipe(removeEmptyLines())
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
@@ -65,7 +68,6 @@ templateRegistry.prototype.init = function (gulpInst) {
         p.extname = '.xml';
       }))
       .pipe(trim())
-      //.pipe(prettyData({type: 'prettify'}))
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
