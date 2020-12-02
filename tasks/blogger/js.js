@@ -22,6 +22,7 @@ const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 const terser = require('gulp-terser');
 const trim = require('../../lib/trim');
+const removeEmptyLines = require('../../lib/remove-empty-lines');
 
 const config = require('../../config');
 
@@ -163,6 +164,7 @@ jsRegistry.prototype.init = function (gulpInst) {
       .pipe(terser())
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
+      .pipe(removeEmptyLines())
       .pipe(dest(opts.build.dir, {
         overwrite: true
       }));
