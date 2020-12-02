@@ -7,6 +7,7 @@ const stripIndent = require('strip-indent');
 const header = require('gulp-header');
 const stripCssComments = require('gulp-strip-css-comments');
 const prettyData = require('gulp-pretty-data');
+const filter = require('gulp-filter');
 
 const trim = require('../../lib/trim');
 const config = require('../../config');
@@ -55,9 +56,14 @@ layoutRegistry.prototype.init = function(gulpInst) {
   };
 
   gulpInst.task('layout-build', function() {
+    const cssFilter = filter('**/*.minify.css', {
+      restore: true
+    });
     return src(opts.src.dir + '/*.css')
       .pipe(stripCssComments())
+      .pipe(cssFilter)
       .pipe(prettyData({type: 'minify', preserveComments: true}))
+      .pipe(cssFilter.restore)
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(dest(opts.build.dir, {

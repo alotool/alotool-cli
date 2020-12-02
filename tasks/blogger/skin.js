@@ -10,6 +10,7 @@ const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const stripCssComments = require('gulp-strip-css-comments');
 const prettyData = require('gulp-pretty-data');
+const filter = require('gulp-filter');
 
 // extract
 const extract = require('../../lib/extract');
@@ -152,9 +153,14 @@ skinRegistry.prototype.init = function (gulpInst) {
   });
 
   gulpInst.task('skin-build', function() {
+    const cssFilter = filter('**/*.minify.css', {
+      restore: true
+    });
     return src(opts.src.dir + '/*.css')
       .pipe(stripCssComments())
+      .pipe(cssFilter)
       .pipe(prettyData({type: 'minify', preserveComments: true}))
+      .pipe(cssFilter.restore)
       .pipe(header(banner.text, banner.data))
       .pipe(trim())
       .pipe(dest(opts.build.dir, {
