@@ -14,7 +14,7 @@
       /* <![CDATA[ */
       html, body { overflow-x: hidden; }
       body { position: relative; }
-      /* CSS here */
+      /* code css here */
       /* ]]> */
       </style>
     </b:if>
@@ -23,7 +23,7 @@
     <b:if cond='!data:view.isLayoutMode'>
       <b:skin>
       <![CDATA[
-      /* CSS here */
+      /* code css here */
       ]]>
       </b:skin>
     </b:if>
@@ -31,7 +31,7 @@
     <b:if cond='data:view.isLayoutMode'>
       <b:template-skin>
       <![CDATA[
-      /* CSS here */
+      /* code css here */
       ]]>
       </b:template-skin>
     </b:if>
@@ -189,7 +189,7 @@
 
     <script type="text/javascript">
       //<![CDATA[
-      /* JS here */
+      /* code js here */
       //]]>
     </script>
 
