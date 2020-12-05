@@ -33,6 +33,12 @@
       ]]>
       </b:template-skin>
     </b:if>
+
+    <b:defaultmarkups>
+      <b:defaultmarkup type='Common'>
+      </b:defaultmarkup>
+    </b:defaultmarkups>
+
   </head>
 
   <body>
