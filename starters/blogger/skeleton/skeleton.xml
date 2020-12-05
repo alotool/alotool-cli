@@ -8,16 +8,18 @@
     <b:include data='blog' name='all-head-content' />
     <b:include data='blog' name='google-analytics' />
 
+    <b:comment>=== HEAD-CSS ===</b:comment>
     <b:if cond='!data:view.isLayoutMode'>
       <style type="text/css">
       /* <![CDATA[ */
-      /* CSS here */
       html, body { overflow-x: hidden; }
       body { position: relative; }
+      /* CSS here */
       /* ]]> */
       </style>
     </b:if>
 
+    <b:comment>=== B-SKIN ===</b:comment>
     <b:if cond='!data:view.isLayoutMode'>
       <b:skin>
       <![CDATA[
