@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <b:comment>=== Body classes ===</b:comment>
+    <b:comment>=== BODY-CLASS ===</b:comment>
     <b:class cond='data:view.isHomepage' name='is-homepage' />
     <b:class cond='data:view.isPost' name='is-post' />
     <b:class cond='data:view.isPage' name='is-page' />
