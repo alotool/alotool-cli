@@ -138,6 +138,7 @@
             </b:if>
           </b:includable>
 
+          <b:comment>=== REMOVE DEFAULT INCLUDABLE ===</b:comment>
           <b:includable id='aboutPostAuthor' />
           <b:includable id='addComments' />
           <b:includable id='commentAuthorAvatar' />
@@ -175,7 +176,7 @@
     </main>
 
     <footer>
-      <p>Footer.</p>
+      <p>FOOTER</p>
     </footer>
 
     <script>
@@ -184,7 +185,7 @@
       //]]>
     </script>
 
-    <b:comment>FAKE-SECTION</b:comment>
+    <b:comment>=== FAKE-SECTION ===</b:comment>
     <b:comment>- Blogger theme requires at least one `b:section` with `showaddelement='yes'`.</b:comment>
     <b:comment>- Note: the default value of `showaddelement` is `yes`.</b:comment>
     <b:if cond='!data:view.isLayoutMode and (data:blog.view == "NeverAccessThisView")'>
