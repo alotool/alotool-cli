@@ -9,7 +9,7 @@
     <b:include data='blog' name='google-analytics' />
 
     <b:if cond='!data:view.isLayoutMode'>
-      <style>
+      <style type="text/css">
       /* <![CDATA[ */
       /* CSS here */
       html, body { overflow-x: hidden; }
@@ -185,7 +185,7 @@
       <p>FOOTER</p>
     </footer>
 
-    <script>
+    <script type="text/javascript">
       //<![CDATA[
       /* JS here */
       //]]>
