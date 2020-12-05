@@ -166,7 +166,7 @@
               </b:if>
             </b:if>
 
-            <b:comment>=== Specific post ===</b:comment>
+            <b:comment>=== Specific post url ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.url == "https://blogName.blogspot.com/{year}/{month}/{post-link}.html"'>
                 <b:comment>=== URL: https://blogName.blogspot.com/{year}/{month}/{post-link}.html ===</b:comment>
@@ -174,7 +174,7 @@
               </b:if>
             </b:if>
 
-            <b:comment>=== Specific static page ===</b:comment>
+            <b:comment>=== Specific static page url ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.url == "https://blogName.blogspot.com/p/{page-link}.html"'>
                 <b:comment>=== URL: https://blogName.blogspot.com/p/{page-link}.html ===</b:comment>
@@ -182,7 +182,7 @@
               </b:if>
             </b:if>
 
-            <b:comment>=== Specific search label ===</b:comment>
+            <b:comment>=== Specific search label name ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.search.label == "{label-name}"'>
                 <b:comment>=== 1. URL: https://blogName.blogspot.com/search/label/{label-name} ===</b:comment>
@@ -191,7 +191,7 @@
               </b:if>
             </b:if>
 
-            <b:comment>=== Specific search query ===</b:comment>
+            <b:comment>=== Specific search query value ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.search.query == "{query-value}"'>
                 <b:comment>=== URL: https://blogName.blogspot.com/search?q={query-value} ===</b:comment>
