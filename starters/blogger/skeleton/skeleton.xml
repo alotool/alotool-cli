@@ -28,6 +28,7 @@
       </b:skin>
     </b:if>
 
+    <b:comment>=== LAYOUT-MODE ===</b:comment>
     <b:if cond='data:view.isLayoutMode'>
       <b:template-skin>
       <![CDATA[
@@ -36,11 +37,16 @@
       </b:template-skin>
     </b:if>
 
+    <b:comment>=== MARKUPS ===</b:comment>
     <b:defaultmarkups>
       <b:defaultmarkup type='Common'>
       </b:defaultmarkup>
     </b:defaultmarkups>
 
+    <b:comment>=== HEAD-JS ===</b:comment>
+    <script>
+      /* code js here */
+    </script>
   </head>
 
   <body>
