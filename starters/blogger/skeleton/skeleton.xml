@@ -138,7 +138,7 @@
             </b:if>
           </b:includable>
 
-          <b:comment>=== REMOVE DEFAULT INCLUDABLE ===</b:comment>
+          <!-- REMOVE DEFAULT INCLUDABLE -->
           <b:includable id='aboutPostAuthor' />
           <b:includable id='addComments' />
           <b:includable id='commentAuthorAvatar' />
