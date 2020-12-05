@@ -87,7 +87,6 @@
             <b:comment>###### Posts ######</b:comment>
 
             <b:comment>### Homepage | Search (label|query|default) page | Archive page ###</b:comment>
-
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isMultipleItems'>
                 <b:loop values='data:posts' var='post'>
@@ -104,7 +103,6 @@
             </b:if>
 
             <b:comment>### Post page ###</b:comment>
-
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isPost'>
                 <b:loop values='data:posts' var='post'>
@@ -122,7 +120,6 @@
             </b:if>
 
             <b:comment>### Static page ###</b:comment>
-
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isPage'>
                 <b:loop values='data:posts' var='post'>
@@ -140,7 +137,6 @@
             </b:if>
 
             <b:comment>###### Pager ######</b:comment>
-
             <b:if cond='data:posts.notEmpty and !data:view.isPage'>
               <nav>
                 <a>
@@ -148,12 +144,10 @@
                   <b:class cond='!data:newerPageUrl' name='disabled' />
                   <data:messages.newer />
                 </a>
-
                 <a>
                   <b:attr expr:value='data:blog.homepageUrl' name='href' />
                   <data:messages.home />
                 </a>
-
                 <a>
                   <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href' />
                   <b:class cond='!data:olderPageUrl' name='disabled' />
