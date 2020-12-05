@@ -61,6 +61,7 @@
     <b:class cond='data:view.isError' name='is-error' />
     <b:class cond='data:view.isPreview' name='is-preview' />
 
+    <b:comment>=== HEADER ===</b:comment>
     <header>
       <h1>
         <a expr:href='data:blog.homepageUrl'>
@@ -69,6 +70,7 @@
       </h1>
     </header>
 
+    <b:comment>=== CONTENT ===</b:comment>
     <main>
       <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='no'>
         <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
@@ -189,10 +191,12 @@
       </b:section>
     </main>
 
+    <b:comment>=== FOOTER ===</b:comment>
     <footer>
       <p>FOOTER</p>
     </footer>
 
+    <b:comment>=== BODY-JS ===</b:comment>
     <script type="text/javascript">
       //<![CDATA[
       /* code js here */
