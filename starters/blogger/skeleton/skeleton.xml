@@ -4,18 +4,27 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <title><data:view.title.escaped /></title>
+    <title>
+      <data:view.title.escaped />
+    </title>
     <b:include data='blog' name='all-head-content' />
     <b:include data='blog' name='google-analytics' />
 
     <b:comment>=== HEAD-CSS ===</b:comment>
     <b:if cond='!data:view.isLayoutMode'>
       <style type="text/css">
-      /* <![CDATA[ */
-      html, body { overflow-x: hidden; }
-      body { position: relative; }
-      /* code css here */
-      /* ]]> */
+        /* <![CDATA[ */
+        html,
+        body {
+          overflow-x: hidden;
+        }
+
+        body {
+          position: relative;
+        }
+
+        /* code css here */
+        /* ]]> */
       </style>
     </b:if>
 
