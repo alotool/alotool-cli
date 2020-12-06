@@ -141,6 +141,58 @@
         <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
           <b:includable id='main' var='this'>
 
+            <b:comment>=== is-Homepage | is-Search-(Label|Query|Default) | is-Archive ===</b:comment>
+            <b:if cond='data:posts.notEmpty'>
+              <b:if cond='data:view.isMultipleItems'>
+
+                <b:comment>=== is-Homepage ===</b:comment>
+                <b:if cond='data:view.isHomepage'>
+                  <b:comment>=== URL: https://blogName.blogspot.com ===</b:comment>
+                </b:if>
+
+                <b:comment>=== is-Search-label ===</b:comment>
+                <b:if cond='data:view.isLabelSearch'>
+                  <b:comment>=== 1. URL: https://blogName.blogspot.com/search/label/{label-name} ===</b:comment>
+                  <b:comment>=== 2. URL: https://blogName.blogspot.com/search?label={label-name} ===</b:comment>
+                  <b:comment>=== Specific search label name ===</b:comment>
+                  <b:if cond='data:view.search.label == "{label-name}"'>
+                  </b:if>
+                </b:if>
+
+                <b:comment>=== is-Search-Query ===</b:comment>
+                <b:if cond='data:view.search.query'>
+                  <b:comment>=== URL: https://blogName.blogspot.com/search?q={query-value} ===</b:comment>
+                  <b:comment>=== Specific search query value ===</b:comment>
+                  <b:if cond='data:view.search.query == "{query-value}"'>
+                  </b:if>
+                </b:if>
+
+                <b:comment>=== is-Search-Default ===</b:comment>
+                <b:if cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query'>
+                  <b:comment>=== URL: https://blogName.blogspot.com/search ===</b:comment>
+                </b:if>
+
+                <b:comment>=== is-Archive ===</b:comment>
+                <b:if cond='data:view.isArchive'>
+                  <b:comment>=== 1. URL: https://blogName.blogspot.com/{year} ===</b:comment>
+                  <b:comment>=== 2. URL: https://blogName.blogspot.com/{year}/{month} ===</b:comment>
+                  <b:comment>=== 3. URL: https://blogName.blogspot.com/{year}_{month}_{day}_archive.html ===</b:comment>
+                </b:if>
+
+                <b:loop values='data:posts' var='post'>
+                  <article expr:id='"post-" + data:post.id'>
+                    <b:comment>=== Title ===</b:comment>
+                    <h2>
+                      <a expr:href='data:post.link ?: data:post.url'>
+                        <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle' />
+                      </a>
+                    </h2>
+                  </article>
+                </b:loop>
+
+              </b:if>
+            </b:if>
+
             <b:comment>=== is-Post ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isPost'>
@@ -181,76 +233,24 @@
               </b:if>
             </b:if>
 
-            <b:comment>=== is-error ===</b:comment>
+            <b:comment>=== is-Error ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isError'>
                 <b:comment>=== URL: https://blogName.blogspot.com/{404} ===</b:comment>
               </b:if>
             </b:if>
 
-            <b:comment>=== is-preview ===</b:comment>
+            <b:comment>=== is-Preview ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isPreview'>
                 <b:comment>=== URL: https://www.blogger.com/blog/post/edit/preview/{blogID}/{postID} ===</b:comment>
               </b:if>
             </b:if>
 
-            <b:comment>=== is-layout-mode ===</b:comment>
+            <b:comment>=== is-LayoutMode ===</b:comment>
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isLayoutMode'>
                 <b:comment>=== URL: https://www.blogger.com/blog/layout/{blogID} ===</b:comment>
-              </b:if>
-            </b:if>
-
-            <b:comment>=== is-Homepage | is-search-(label|query|default) | is-archive ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isMultipleItems'>
-
-                <b:comment>=== is-Homepage ===</b:comment>
-                <b:if cond='data:view.isHomepage'>
-                  <b:comment>=== URL: https://blogName.blogspot.com ===</b:comment>
-                </b:if>
-
-                <b:comment>=== is-search-label ===</b:comment>
-                <b:if cond='data:view.isLabelSearch'>
-                  <b:comment>=== 1. URL: https://blogName.blogspot.com/search/label/{label-name} ===</b:comment>
-                  <b:comment>=== 2. URL: https://blogName.blogspot.com/search?label={label-name} ===</b:comment>
-                  <b:comment>=== Specific search label name ===</b:comment>
-                  <b:if cond='data:view.search.label == "{label-name}"'>
-                  </b:if>
-                </b:if>
-
-                <b:comment>=== is-search-query ===</b:comment>
-                <b:if cond='data:view.search.query'>
-                  <b:comment>=== URL: https://blogName.blogspot.com/search?q={query-value} ===</b:comment>
-                  <b:comment>=== Specific search query value ===</b:comment>
-                  <b:if cond='data:view.search.query == "{query-value}"'>
-                  </b:if>
-                </b:if>
-
-                <b:comment>=== is-search-default ===</b:comment>
-                <b:if cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query'>
-                  <b:comment>=== URL: https://blogName.blogspot.com/search ===</b:comment>
-                </b:if>
-
-                <b:comment>=== is-archive ===</b:comment>
-                <b:if cond='data:view.isArchive'>
-                  <b:comment>=== 1. URL: https://blogName.blogspot.com/{year} ===</b:comment>
-                  <b:comment>=== 2. URL: https://blogName.blogspot.com/{year}/{month} ===</b:comment>
-                  <b:comment>=== 3. URL: https://blogName.blogspot.com/{year}_{month}_{day}_archive.html ===</b:comment>
-                </b:if>
-
-                <b:loop values='data:posts' var='post'>
-                  <article expr:id='"post-" + data:post.id'>
-                    <b:comment>=== Title ===</b:comment>
-                    <h2>
-                      <a expr:href='data:post.link ?: data:post.url'>
-                        <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle' />
-                      </a>
-                    </h2>
-                  </article>
-                </b:loop>
-
               </b:if>
             </b:if>
 
