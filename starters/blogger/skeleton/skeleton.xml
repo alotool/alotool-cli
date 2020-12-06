@@ -214,10 +214,10 @@
 
                 <b:comment>=== URL: https://blogName.blogspot.com/{year}/{month}/{post-link}.html ===</b:comment>
                 <b:comment>=== Specific post url ===</b:comment>
-                <script>postID = "<data:post.id/>";</script>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/{year}/{month}/{post-link}.html"'>
                 </b:if>
                 <b:loop values='data:posts' var='post'>
+                  <script>postID = "<data:post.id/>";</script>
                   <article expr:id='"post-" + data:post.id'>
                     <b:comment>=== Title ===</b:comment>
                     <h1>
@@ -237,10 +237,10 @@
 
                 <b:comment>=== URL: https://blogName.blogspot.com/p/{page-link}.html ===</b:comment>
                 <b:comment>=== Specific static page url ===</b:comment>
-                <script>pageID = "<data:post.id/>";</script>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/p/{page-link}.html"'>
                 </b:if>
                 <b:loop values='data:posts' var='post'>
+                  <script>pageID = "<data:post.id/>";</script>
                   <article expr:id='"post-" + data:post.id'>
                     <b:comment>=== Title ===</b:comment>
                     <h1>
