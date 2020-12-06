@@ -7,26 +7,26 @@
     <title>
       <data:view.title.escaped />
     </title>
-    <link href='//1.bp.blogspot.com' rel='dns-prefetch' />
-    <link href='//2.bp.blogspot.com' rel='dns-prefetch' />
-    <link href='//3.bp.blogspot.com' rel='dns-prefetch' />
-    <link href='//4.bp.blogspot.com' rel='dns-prefetch' />
-    <link href='//www.blogger.com' rel='dns-prefetch' />
-    <link href='//img1.blogblog.com' rel='dns-prefetch' />
-    <link href='//resources.blogblog.com' rel='dns-prefetch' />
-    <link href='//lh3.googleusercontent.com' rel='dns-prefetch' />
-    <link href='//apis.google.com' rel='dns-prefetch' />
-    <link href='//fonts.gstatic.com' rel='dns-prefetch' />
-    <link href='//fonts.googleapis.com' rel='dns-prefetch' />
-    <link href='//ajax.googleapis.com' rel='dns-prefetch' />
-    <link href='//pagead2.googlesyndication.com' rel='dns-prefetch' />
-    <link href='//googleads.g.doubleclick.net' rel='dns-prefetch' />
-    <link href='//tpc.googlesyndication.com' rel='dns-prefetch' />
-    <link href='//www.googletagservices.com' rel='dns-prefetch' />
-    <link href='//www.googletagmanager.com' rel='dns-prefetch' />
-    <link href='//www.google-analytics.com' rel='dns-prefetch' />
-    <link href='//cdn.jsdelivr.net' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
+    <link rel='dns-prefetch' href='//1.bp.blogspot.com' />
+    <link rel='dns-prefetch' href='//2.bp.blogspot.com' />
+    <link rel='dns-prefetch' href='//3.bp.blogspot.com' />
+    <link rel='dns-prefetch' href='//4.bp.blogspot.com' />
+    <link rel='dns-prefetch' href='//www.blogger.com' />
+    <link rel='dns-prefetch' href='//img1.blogblog.com' />
+    <link rel='dns-prefetch' href='//resources.blogblog.com' />
+    <link rel='dns-prefetch' href='//lh3.googleusercontent.com' />
+    <link rel='dns-prefetch' href='//apis.google.com' />
+    <link rel='dns-prefetch' href='//fonts.gstatic.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//ajax.googleapis.com' />
+    <link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+    <link rel='dns-prefetch' href='//googleads.g.doubleclick.net' />
+    <link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+    <link rel='dns-prefetch' href='//www.googletagservices.com' />
+    <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+    <link rel='dns-prefetch' href='//www.google-analytics.com' />
+    <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+    <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
     <link rel='dns-prefetch' href='//www.facebook.com' />
     <link rel='dns-prefetch' href='//connect.facebook.net' />
     <link rel='dns-prefetch' href='//static.xx.fbcdn.net' />
