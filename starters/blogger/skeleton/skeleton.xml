@@ -102,6 +102,10 @@
     </b:defaultmarkups>
 
     <b:comment>=== HEAD-JS ===</b:comment>
+    <b:if cond='data:widgets.AdSense.first or data:blog.adsenseClientId'>
+      <b:comment>### Google AdSense ###</b:comment>
+      <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+    </b:if>
     <script>
       /* code js here */
     </script>
