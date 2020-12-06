@@ -248,16 +248,16 @@
             </b:if>
 
             <b:comment>=== is-Preview ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isPreview'>
-                <b:comment>=== URL: https://www.blogger.com/blog/post/edit/preview/{blogID}/{postID} ===</b:comment>
+            <b:if cond='data:view.isPreview'>
+              <b:comment>=== URL: https://www.blogger.com/blog/post/edit/preview/{blogID}/{postID} ===</b:comment>
+              <b:if cond='data:posts.notEmpty'>
               </b:if>
             </b:if>
 
             <b:comment>=== is-LayoutMode ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isLayoutMode'>
-                <b:comment>=== URL: https://www.blogger.com/blog/layout/{blogID} ===</b:comment>
+            <b:if cond='data:view.isLayoutMode'>
+              <b:comment>=== URL: https://www.blogger.com/blog/layout/{blogID} ===</b:comment>
+              <b:if cond='data:posts.notEmpty'>
               </b:if>
             </b:if>
 
