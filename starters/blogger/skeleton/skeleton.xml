@@ -110,7 +110,17 @@
       <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
     </b:if>
     <script>
-      /* code js here */
+      var language = "<data:blog.locale.language/>";
+      var isPage = "<data:view.isPage/>" === "true" ? true : false;
+      var isPost = "<data:view.isPost/>" === "true" ? true : false;
+      var isHomepage = "<data:view.isHomepage/>" === "true" ? true : false;
+      var isMobileRequest = "<data:blog.isMobileRequest/>" === "true" ? true : false;
+      var isSearchLabel = "<data:view.isLabelSearch/>" === "true" ? true : false;
+      var isSearchQuery = "<data:view.search.query/>" === "<!--Can't find substitution for tag [view.search.query]-->" ? false : true;
+      var isSearchDefault = "<data:view.isSearch/>" === "true" &amp;&amp; !isSearchQuery ? true : false;
+      var isArchive = "<data:view.isArchive/>" === "true" ? true : false;
+      var isError = "<data:view.isError/>" === "true" ? true : false;
+      var isPreview = "<data:view.isPreview/>" === "true" ? true : false;
     </script>
   </head>
 
