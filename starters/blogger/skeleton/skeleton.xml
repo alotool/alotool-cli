@@ -143,8 +143,8 @@
 
             <b:comment>=== is-Homepage | is-Search-(Label|Query|Default) | is-Archive ===</b:comment>
             <b:include name='searchMessage' />
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isMultipleItems'>
+            <b:if cond='data:view.isMultipleItems'>
+              <b:if cond='data:posts.notEmpty'>
 
                 <b:comment>=== is-Homepage ===</b:comment>
                 <b:if cond='data:view.isHomepage'>
