@@ -116,7 +116,7 @@
 
   <body>
     <b:comment>=== BODY-CLASS ===</b:comment>
-    <b:class cond='data:view.isHomepage' name='is-homepage' />
+    <b:class cond='data:view.isHomepage' name='is-home-page' />
     <b:class cond='data:view.isPost' name='is-post' />
     <b:class cond='data:view.isPage' name='is-page' />
     <b:class cond='data:view.isLabelSearch' name='is-search-label' />
