@@ -7,6 +7,7 @@
     <title>
       <data:view.title.escaped />
     </title>
+    <b:include name='head-link' />
     <b:include data='blog' name='all-head-content' />
     <b:include data='blog' name='google-analytics' />
 
