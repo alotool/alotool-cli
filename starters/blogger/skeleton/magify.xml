@@ -20,6 +20,8 @@
     <link href='//connect.facebook.net' rel='dns-prefetch' />
     <link href='//c.disquscdn.com' rel='dns-prefetch' />
     <link href='//disqus.com' rel='dns-prefetch' />
+    <link href='//twitter.com' rel='dns-prefetch' />
+    <link href='//www.facebook.com' rel='dns-prefetch' />
     <b:include name='theme-head' />
     <!-- Font Awesome Free 5.8.2 -->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet' />
