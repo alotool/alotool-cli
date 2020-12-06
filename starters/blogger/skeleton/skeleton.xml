@@ -217,8 +217,9 @@
             </b:if>
 
             <b:comment>=== is-Page ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isPage'>
+            <b:if cond='data:view.isPage'>
+              <b:if cond='data:posts.notEmpty'>
+
                 <b:comment>=== URL: https://blogName.blogspot.com/p/{page-link}.html ===</b:comment>
                 <b:comment>=== Specific static page url ===</b:comment>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/p/{page-link}.html"'>
@@ -233,6 +234,7 @@
                     <data:post.body />
                   </article>
                 </b:loop>
+
               </b:if>
             </b:if>
 
