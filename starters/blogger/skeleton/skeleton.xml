@@ -289,7 +289,7 @@
           <!-- MY INCLUDABLE -->
           <b:includable id='searchMessage'>
             <b:if cond='data:view.isLabelSearch'>
-              <div class='query-message'>
+              <div class='search-message'>
                 <b:if cond='data:posts.notEmpty'>
                   <span class='not-empty'>
                     <data:view.search.resultsMessageHtml />
@@ -302,7 +302,7 @@
               </div>
             </b:if>
             <b:if cond='data:view.search.query'>
-              <div class='query-message'>
+              <div class='search-message'>
                 <b:if cond='data:posts.notEmpty'>
                   <span class='not-empty'>
                     <data:view.search.resultsMessageHtml />
@@ -315,7 +315,7 @@
               </div>
             </b:if>
             <b:if cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query'>
-              <div class='query-message'>
+              <div class='search-message'>
                 <b:if cond='data:posts.notEmpty'>
                   <span class='not-empty'>
                     <data:view.search.resultsMessageHtml />
@@ -328,7 +328,7 @@
               </div>
             </b:if>
             <b:if cond='data:view.isArchive'>
-              <div class='query-message'>
+              <div class='search-message'>
                 <b:if cond='data:posts.notEmpty'>
                   <span class='not-empty'>
                     <data:view.archive.rangeMessage />
@@ -341,7 +341,7 @@
               </div>
             </b:if>
             <b:if cond='data:view.isMultipleItems and data:posts.empty'>
-              <div class='queryEmpty'>
+              <div class='no-results-found'>
                 <data:messages.noResultsFound />
               </div>
             </b:if>
