@@ -235,17 +235,15 @@
             </b:if>
 
             <b:comment>=== is-Error ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
+            <b:if cond='data:view.isError'>
+              <b:comment>=== URL: https://blogName.blogspot.com/{404} ===</b:comment>
               <b:if cond='data:view.isError'>
-                <b:comment>=== URL: https://blogName.blogspot.com/{404} ===</b:comment>
-                <b:if cond='data:view.isError'>
-                  <div class='error-wrap'>
-                    <h3>404</h3>
-                    <h4><data:messages.theresNothingHere /></h4>
-                    <p><data:navMessage /></p>
-                    <a class='home-page-url' expr:href='data:blog.homepageUrl'><data:messages.home /></a>
-                  </div>
-                </b:if>
+                <div class='error-wrap'>
+                  <h3>404</h3>
+                  <h4><data:messages.theresNothingHere /></h4>
+                  <p><data:navMessage /></p>
+                  <a class='home-page-url' expr:href='data:blog.homepageUrl'><data:messages.home /></a>
+                </div>
               </b:if>
             </b:if>
 
