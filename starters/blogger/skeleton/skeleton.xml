@@ -111,6 +111,8 @@
     </b:if>
     <script>
       var language = "<data:blog.locale.language/>";
+      var isSingleItem = "<data:view.isSingleItem/>" === "true" ? true : false;
+      var isMultipleItems = "<data:view.isMultipleItems/>" === "true" ? true : false;
       var isPage = "<data:view.isPage/>" === "true" ? true : false;
       var isPost = "<data:view.isPost/>" === "true" ? true : false;
       var isHomepage = "<data:view.isHomepage/>" === "true" ? true : false;
