@@ -123,6 +123,8 @@
       var isArchive = "<data:view.isArchive/>" === "true" ? true : false;
       var isError = "<data:view.isError/>" === "true" ? true : false;
       var isPreview = "<data:view.isPreview/>" === "true" ? true : false;
+      var pageID = undefined;
+      var postID = undefined;
     </script>
   </head>
 
@@ -212,7 +214,7 @@
 
                 <b:comment>=== URL: https://blogName.blogspot.com/{year}/{month}/{post-link}.html ===</b:comment>
                 <b:comment>=== Specific post url ===</b:comment>
-                <script>var postID = "<data:post.id/>";</script>
+                <script>postID = "<data:post.id/>";</script>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/{year}/{month}/{post-link}.html"'>
                 </b:if>
                 <b:loop values='data:posts' var='post'>
@@ -235,7 +237,7 @@
 
                 <b:comment>=== URL: https://blogName.blogspot.com/p/{page-link}.html ===</b:comment>
                 <b:comment>=== Specific static page url ===</b:comment>
-                <script>var pageID = "<data:post.id/>";</script>
+                <script>pageID = "<data:post.id/>";</script>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/p/{page-link}.html"'>
                 </b:if>
                 <b:loop values='data:posts' var='post'>
