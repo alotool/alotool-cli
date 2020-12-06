@@ -142,6 +142,7 @@
           <b:includable id='main' var='this'>
 
             <b:comment>=== is-Homepage | is-Search-(Label|Query|Default) | is-Archive ===</b:comment>
+            <b:include name='searchMessage' />
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isMultipleItems'>
 
@@ -237,6 +238,14 @@
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isError'>
                 <b:comment>=== URL: https://blogName.blogspot.com/{404} ===</b:comment>
+                <b:if cond='data:view.isError'>
+                  <div class='error-wrap'>
+                    <h3>404</h3>
+                    <h4><data:messages.theresNothingHere /></h4>
+                    <p><data:navMessage /></p>
+                    <a class='home-page-url' expr:href='data:blog.homepageUrl'><data:messages.home /></a>
+                  </div>
+                </b:if>
               </b:if>
             </b:if>
 
@@ -277,57 +286,56 @@
           </b:includable>
           <!-- MY INCLUDABLE -->
           <b:includable id='searchMessage'>
-            <b:if cond='data:view.search.query'>
-              <div class='queryMessage'>
-                <b:if cond='data:posts.empty'>
-                  <span class='query-info query-error'>
+            <b:if cond='data:view.isLabelSearch'>
+              <div class='query-message'>
+                <b:if cond='data:posts.notEmpty'>
+                  <span class='not-empty'>
                     <data:view.search.resultsMessageHtml />
                   </span>
                   <b:else />
-                  <span class='query-info query-success'>
+                  <span class='empty'>
                     <data:view.search.resultsMessageHtml />
                   </span>
                 </b:if>
               </div>
             </b:if>
-            <b:if cond='data:view.search.label'>
-              <div class='queryMessage'>
-                <b:if cond='data:posts.empty'>
-                  <span class='query-info query-error'>
+            <b:if cond='data:view.search.query'>
+              <div class='query-message'>
+                <b:if cond='data:posts.notEmpty'>
+                  <span class='not-empty'>
                     <data:view.search.resultsMessageHtml />
                   </span>
                   <b:else />
-                  <span class='query-info query-success'>
+                  <span class='empty'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                </b:if>
+              </div>
+            </b:if>
+            <b:if cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query'>
+              <div class='query-message'>
+                <b:if cond='data:posts.notEmpty'>
+                  <span class='not-empty'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                  <b:else />
+                  <span class='empty'>
                     <data:view.search.resultsMessageHtml />
                   </span>
                 </b:if>
               </div>
             </b:if>
             <b:if cond='data:view.isArchive'>
-              <div class='queryMessage'>
-                <b:if cond='data:posts.empty'>
-                  <span class='query-info query-error'>
+              <div class='query-message'>
+                <b:if cond='data:posts.notEmpty'>
+                  <span class='not-empty'>
                     <data:view.archive.rangeMessage />
                   </span>
                   <b:else />
-                  <span class='query-info query-success'>
+                  <span class='empty'>
                     <data:view.archive.rangeMessage />
                   </span>
                 </b:if>
-              </div>
-            </b:if>
-            <b:if cond='data:view.isError'>
-              <div class='errorWrap'>
-                <h3>404</h3>
-                <h4>
-                  <data:messages.theresNothingHere />
-                </h4>
-                <p>
-                  <data:navMessage />
-                </p>
-                <a class='homepage' expr:href='data:blog.homepageUrl'>
-                  <data:messages.home />
-                </a>
               </div>
             </b:if>
             <b:if cond='data:view.isMultipleItems and data:posts.empty'>
