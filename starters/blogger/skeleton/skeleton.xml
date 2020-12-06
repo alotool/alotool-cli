@@ -82,6 +82,22 @@
           <link rel='dns-prefetch' href='//www.pinterest.com' />
           <link rel='dns-prefetch' href='//www.linkedin.com' />
         </b:includable>
+        <b:includable id='translate'>
+          <b:switch var='data:message'>
+            <b:case value='prevPost' />
+            <b:if cond='data:blog.locale.language == "en"'><data:messages.newer />
+              <b:elseif cond='data:blog.locale.language == "vi"' /><data:messages.newer />
+              <b:else /><data:messages.newer />
+            </b:if>
+            <b:case value='nextPost' />
+            <b:if cond='data:blog.locale.language == "en"'><data:messages.older />
+              <b:elseif cond='data:blog.locale.language == "vi"' /><data:messages.older />
+              <b:else /><data:messages.older />
+            </b:if>
+            <b:default />
+            <data:message />
+          </b:switch>
+        </b:includable>
       </b:defaultmarkup>
     </b:defaultmarkups>
 
