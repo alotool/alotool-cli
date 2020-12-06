@@ -275,7 +275,67 @@
             </b:if>
 
           </b:includable>
-
+          <!-- MY INCLUDABLE -->
+          <b:includable id='searchMessage'>
+            <b:if cond='data:view.search.query'>
+              <div class='queryMessage'>
+                <b:if cond='data:posts.empty'>
+                  <span class='query-info query-error'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                  <b:else />
+                  <span class='query-info query-success'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                </b:if>
+              </div>
+            </b:if>
+            <b:if cond='data:view.search.label'>
+              <div class='queryMessage'>
+                <b:if cond='data:posts.empty'>
+                  <span class='query-info query-error'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                  <b:else />
+                  <span class='query-info query-success'>
+                    <data:view.search.resultsMessageHtml />
+                  </span>
+                </b:if>
+              </div>
+            </b:if>
+            <b:if cond='data:view.isArchive'>
+              <div class='queryMessage'>
+                <b:if cond='data:posts.empty'>
+                  <span class='query-info query-error'>
+                    <data:view.archive.rangeMessage />
+                  </span>
+                  <b:else />
+                  <span class='query-info query-success'>
+                    <data:view.archive.rangeMessage />
+                  </span>
+                </b:if>
+              </div>
+            </b:if>
+            <b:if cond='data:view.isError'>
+              <div class='errorWrap'>
+                <h3>404</h3>
+                <h4>
+                  <data:messages.theresNothingHere />
+                </h4>
+                <p>
+                  <data:navMessage />
+                </p>
+                <a class='homepage' expr:href='data:blog.homepageUrl'>
+                  <data:messages.home />
+                </a>
+              </div>
+            </b:if>
+            <b:if cond='data:view.isMultipleItems and data:posts.empty'>
+              <div class='queryEmpty'>
+                <data:messages.noResultsFound />
+              </div>
+            </b:if>
+          </b:includable>
           <!-- REMOVE DEFAULT INCLUDABLE -->
           <b:includable id='aboutPostAuthor' />
           <b:includable id='addComments' />

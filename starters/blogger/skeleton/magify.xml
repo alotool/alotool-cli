@@ -2511,7 +2511,7 @@ body#layout:after{content:'Design by Templateify.com';display:block;font-family:
                   <b:if cond='data:view.search.query'>
                     <div class='queryMessage'>
                       <b:if cond='data:posts.empty'>
-                        <span class='query-info query-error'/><data:view.search.resultsMessageHtml/>
+                        <span class='query-info query-error'><data:view.search.resultsMessageHtml/></span>
                         <b:else/>
                         <span class='query-info query-success'><data:view.search.resultsMessageHtml/></span>
                       </b:if>
