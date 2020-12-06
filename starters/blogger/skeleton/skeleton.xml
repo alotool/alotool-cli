@@ -4,12 +4,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>
-      <data:view.title.escaped />
-    </title>
-    <b:include name='head-link' />
-    <b:include data='blog' name='all-head-content' />
-    <b:include data='blog' name='google-analytics' />
+    <b:include name='head' />
 
     <b:comment>=== HEAD-CSS ===</b:comment>
     <b:if cond='!data:view.isLayoutMode'>
@@ -50,7 +45,15 @@
     <b:comment>=== MARKUPS ===</b:comment>
     <b:defaultmarkups>
       <b:defaultmarkup type='Common'>
-        <b:includable id='head-link'>
+        <b:includable id='head'>
+          <title>
+            <data:view.title.escaped />
+          </title>
+          <b:include name='_head-link' />
+          <b:include data='blog' name='all-head-content' />
+          <b:include data='blog' name='google-analytics' />
+        </b:includable>
+        <b:includable id='_head-link'>
           <link rel='dns-prefetch' href='//1.bp.blogspot.com' />
           <link rel='dns-prefetch' href='//2.bp.blogspot.com' />
           <link rel='dns-prefetch' href='//3.bp.blogspot.com' />
