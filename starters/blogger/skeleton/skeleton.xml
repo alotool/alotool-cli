@@ -195,8 +195,9 @@
             </b:if>
 
             <b:comment>=== is-Post ===</b:comment>
-            <b:if cond='data:posts.notEmpty'>
-              <b:if cond='data:view.isPost'>
+            <b:if cond='data:view.isPost'>
+              <b:if cond='data:posts.notEmpty'>
+
                 <b:comment>=== URL: https://blogName.blogspot.com/{year}/{month}/{post-link}.html ===</b:comment>
                 <b:comment>=== Specific post url ===</b:comment>
                 <b:if cond='data:view.url == "https://blogName.blogspot.com/{year}/{month}/{post-link}.html"'>
@@ -211,6 +212,7 @@
                     <data:post.body />
                   </article>
                 </b:loop>
+
               </b:if>
             </b:if>
 
